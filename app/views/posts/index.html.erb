@@ -1,0 +1,22 @@
+<h1>topr</h1>
+<%= link_to "登録はこちらから","/posts/new",method: :GET%>
+<% @posts.each do |post| %>
+ <div class="post">
+    <div class="post-date">
+      投稿日時：<%= post.created_at %>
+    </div>
+    <div class="post-content">
+      <%= post.content %>
+    </div>
+  </div>
+
+<% end %>
+<%= form_with url:"/posts",method: :post,local:true do |form|%>
+  <%= form.text_field :content %>
+  <%= form.submit "投稿する" %>
+</form>
+<h1>藍井エイル会員専用ページ</h1>
+  <%= form.password_field :content %>
+<p>新規会員募集中<p>
+
+<%end%>

@@ -1,0 +1,11 @@
+<h1>藍井エイルWebページ新規投稿</h1>
+<%= form_with url:"/posts",method: :post,local:true do |form|%>
+  <%= form.text_field :content %>
+  <%= form.submit "投稿する" %>
+</form>
+<h1>藍井エイル会員専用ページ</h1>
+  <%= form.password_field :content %>
+<p>新規会員募集中<p>
+<%= link_to "登録はこちらから","/posts/index",method: :GET%>
+<%# <%= link_to '新規投稿', '/posts/new', method: :GET %> 
+<%end%>
